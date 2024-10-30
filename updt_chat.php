@@ -2,7 +2,7 @@
 require 'koneksi.php';
 
 $id = $_GET['id'];
-$stmt = $pdo->prepare("SELECT * FROM tbchats WHERE id=?");
+$stmt = $pdo->prepare("SELECT * FROM tbchats WHERE id = ?");
 $stmt->execute([$id]);
 $chats = $stmt->fetch();
 
@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("UPDATE tbchats SET chat_name = ? WHERE id = ?");
     $stmt->execute([$chat_name, $id]);
 
-    header(Location: read_chats.php);
+    header("Location: read_chats.php");
 }
 ?>
  
