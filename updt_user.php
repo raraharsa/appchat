@@ -19,6 +19,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form method="POST">
     Username: <input type="text" name="username" value="<?= $user['username'] ?>" required>
-    Email: <input type="emaimo" name="username" value="<?= $user['username'] ?>" required>
+    Email: <input type="email" name="email" value="<?= $user['email'] ?>" required>
     <button type="submit">Update</button>
 </form>
