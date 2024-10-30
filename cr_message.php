@@ -16,7 +16,7 @@
         $stmt = $pdo->prepare("INSERT INTO tbmassages (chat_id, user_id, message) VALUES (?,?,?)");
         $stmt->execute([$chat_id, $user_id, $message]);
 
-        header("Location: read_messages.php?chat_id=$chat_id");
+        header("Location: re_message.php?chat_id=$chat_id");
       
     }
 ?>
