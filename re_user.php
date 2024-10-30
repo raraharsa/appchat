@@ -1,17 +1,26 @@
 <php
 require 'koneksi.php';
 
-$stmt = $pdo->query("SELECT * FROM users");
-
+$stmt = $pdo->query("SELECT * FROM tbusers");
+$users = $$stmt->fetchAll();
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Aksi</th>
+    </tr>
+    <?php foreach ($users as $user):?>
+        <tr>
+            <td><?= $user['id']?></td>
+            <td><?= $user['username']?></td>
+            <td><?= $user['email']?></td>
+            <td>
+                <a href="updt_user.php?id=<?= $user['id']?>">Edit</a>
+                <a href="del_user.php?id=<?= $user['id']?>">Hapus</a>
+            </td>
+        </tr>
+        <?php endforeach;?>
+</table>
+

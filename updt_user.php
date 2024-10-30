@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("UPDATE tbusers SET username = ?, email = ? WHERE id = ?");
     $stmt->execute([$username, $email, $id]);
 
-    header("Location: read_users.php");
+    header("Location: re_user.php");
 }
 ?>
 
