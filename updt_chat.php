@@ -7,9 +7,9 @@ $stmt->execute([$id]);
 $chats = $stmt->fetch();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $chat_name = $_POST['chat_name']
+    $chat_name = $_POST['chat_name'];
 
-    $stmt = $pdo->prepare("UPDATE tbchats SET chat_name = ? WHERE id = ?");
+    $stmt = $pdo->prepare("UPDATE tbchats SET chat_name = ?  WHERE id = ?");
     $stmt->execute([$chat_name, $id]);
 
     header("Location: read_chats.php");
