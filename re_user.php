@@ -2,7 +2,7 @@
 require 'koneksi.php';
 
 $stmt = $pdo->query("SELECT * FROM tbusers");
-$users = $$stmt->fetchAll();
+$users = $stmt->fetchAll();
 ?>
 <table>
     <tr>
