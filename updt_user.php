@@ -2,7 +2,7 @@
 require 'koneksi.php';
 
 $id = $_GET['id'];
-$stmt = $pdo->prepare("SELECT * FROM users WHERE id = : ?");
+$stmt = $pdo->prepare("SELECT * FROM tbusers WHERE id = : ?");
 $stmt->execute(['$id']);
 $user = $stmt->fetch();
 
@@ -10,10 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $email = $_POST['email'];
 
-    $stmt = $pdo->prepare("UPDATE users SET username = ?, email = ? WHERE id = ?");
+    $stmt = $pdo->prepare("UPDATE tbusers SET username = ?, email = ? WHERE id = ?");
     $stmt->execute([$username, $email, $id]);
 
-    header("Location: read_users.php");
+    header("Location: re_user.php");
 }
 ?>
 
