@@ -5,5 +5,5 @@ $id = $_GET['id'];
 $stmt = $pdo->prepare("DELETE FROM tbusers WHERE id = ?");
 $stmt->execute([$id]);
 
-header("Location: read_user.php");
+header("Location: re_user.php");
 ?>
