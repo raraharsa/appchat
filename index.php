@@ -54,7 +54,7 @@ if (isset($page)){
   }
  
 }else{
-    include"modul/default.php";
+    include"index.php";
   }
 
 ?>
