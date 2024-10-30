@@ -2,7 +2,7 @@
 require 'koneksi.php';
 
 $id = $_GET['id'];
-$stmt = $pdo->prepare("SELECT * FROM tbusers WHERE id = : ?");
+$stmt = $pdo->prepare("SELECT * FROM tbusers WHERE id = ?");
 $stmt->execute(['$id']);
 $user = $stmt->fetch();
 
