@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_id = $_POST['user_id'];
     $message = $_POST['message'];
     $created_at = $_POST['created_at'];
-
+    
 
     $stmt = $pdo->prepare("UPDATE tbmessages SET chat_id = ?, user_id = ?, message = ?, created_at = ?, WHERE id = ?");
     $stmt->execute([$chat_id, $user_id, $message, $created_at]);
@@ -20,11 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-/* nanti ak benerin lagi ya teman2 */
+
 <form method="POST">
     chat_id: <input type="text" name="chat_id" value="<?= $user['chat_id'] ?>" required>
-    user_id: <input type="text" name="username" value="<?= $user['username'] ?>" required>
-    message: <input type="emaimo" name="username" value="<?= $user['username'] ?>" required>    
-    created_at: <input type="emaimo" name="username" value="<?= $user['username'] ?>" required>
+    user_id: <input type="text" name="user_id" value="<?= $user['user_id'] ?>" required>
+    message: <input type="text" name="message" value="<?= $user['message'] ?>" required>    
+    created_at: <input type="date" name="created_at" value="<?= $user['created_at'] ?>" required>
     <button type="submit">Update</button>
 </form>
