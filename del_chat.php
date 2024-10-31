@@ -1,5 +1,5 @@
 <?php
-require 'koneksi.php';
+require 'lib/koneksi.php';
 
 $id = $_GET['id'];
 $stmt = $pdo->prepare("DELETE FROM tbchats WHERE id = ?");
