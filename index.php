@@ -1,5 +1,5 @@
 <?php
-session_start();
+//session_start();
 date_default_timezone_set('asia/jakarta');
 include"lib/koneksi.php";
 ?>
@@ -14,7 +14,7 @@ include"lib/koneksi.php";
 </head>
 <body>
 <?php
-$page = ($_GET['page'])?$_GET['page']:null;
+$page = isset($_GET['page'])?$_GET['page']:null;
 if (isset($page)){
   if ($page=='user') {
     include"modul/cr_user.php";
