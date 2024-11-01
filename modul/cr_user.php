@@ -6,11 +6,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $stmt = $pdo->prepare("INSERT INTO tbusers (username, email) VALUES (?, ?)");
     $stmt->execute([$username, $email]);
-    header("Location: read_users.php");
+    header("Location: re_users.php"); exit();// Tambahkan `exit` untuk menghentikan eksekusi setelah redirect.
 }
 ?>
-<from method="POST">
+<form method="POST">
     Username: <input type="text" name="username" required>
     Email: <input type="email" name="email" required>
     <button type="submit">Simpan</button>
-</from>
+</form>
