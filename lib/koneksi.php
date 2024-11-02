@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'chat_app'; // Make sure this database exists
+$db = 'chat_app';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';
@@ -12,14 +12,9 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
 
-try {
+try{
     $pdo = new PDO($dsn, $user, $pass, $options);
-    echo "Database connection successful.";
-} catch (PDOException $e) {
-    if ($e->getCode() == 1049) {
-        die("Database '$db' does not exist. Please create the database or check the name.");
-    } else {
-        die("Connection failed: " . $e->getMessage());
-    }
+} catch (\PDOException $e) {
+    throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 ?>
