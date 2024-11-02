@@ -1,5 +1,6 @@
 <?php
 include'config.php';
+
 $host = 'localhost';
 $db = 'chat_app';
 $user = 'root';
