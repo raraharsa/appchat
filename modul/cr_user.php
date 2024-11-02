@@ -1,5 +1,5 @@
 <?php
-require '../lib/koneksi.php';
+include '../../lib/koneksi.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
