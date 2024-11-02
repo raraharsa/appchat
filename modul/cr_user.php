@@ -1,5 +1,6 @@
 <?php
-require '../lib/koneksi.php';
+require __DIR__ . '/../lib/koneksi.php';
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
@@ -7,9 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("INSERT INTO tbusers (username, email) VALUES (?, ?)");
     $stmt->execute([$username, $email]);
     header("Location: re_users.php"); exit();// Tambahkan `exit` untuk menghentikan eksekusi setelah redirect.
-} else {
-    die("File koneksi.php tidak ditemukan di path '../lib/koneksi.php'");
-}
+} 
 
 ?>
 <form method="POST">
