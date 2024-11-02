@@ -1,5 +1,5 @@
 <?php
-require '../koneksi.php';
+include 'lib/config.php';
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,6 +9,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute([$username, $email]);
     header("Location: re_users.php"); exit();// Tambahkan `exit` untuk menghentikan eksekusi setelah redirect.
 } 
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pass);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Koneksi gagal: " . $e->getMessage();
+}
+
+
 
 ?>
 <form method="POST">
