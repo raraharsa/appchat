@@ -1,7 +1,7 @@
 <?php
 //session_start();
 date_default_timezone_set('asia/jakarta');
-include"../lib/koneksi.php";
+include"lib/koneksi.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
